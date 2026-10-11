@@ -38,6 +38,7 @@ body.dark-theme {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + .75rem);
 }
 
 body {
@@ -45,7 +46,13 @@ body {
   font-size: var(--normal-font-size);
   background: var(--body-color);
   color: var(--text-color);
+  overflow-x: hidden;
   transition: background .35s, color .35s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -388,6 +395,13 @@ button {
   margin-bottom: .5rem;
 }
 
+.project-card,
+.research-card,
+.project-card h3,
+.research-card h3 {
+  overflow-wrap: anywhere;
+}
+
 .project-card__tag {
   display: inline-flex;
   color: var(--first-color);
@@ -553,6 +567,129 @@ button {
 .reveal.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Small Phones */
+@media screen and (max-width: 480px) {
+  :root {
+    --header-height: 3.75rem;
+    --biggest-font-size: clamp(1.9rem, 10vw, 2.35rem);
+    --h1-font-size: 1.6rem;
+    --h2-font-size: 1.18rem;
+    --normal-font-size: .9rem;
+  }
+
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .section {
+    padding-block: 4.5rem 1.25rem;
+  }
+
+  .home {
+    padding-top: 6rem;
+  }
+
+  .home__description {
+    margin-bottom: 1.25rem;
+  }
+
+  .home__buttons,
+  .contact__buttons {
+    flex-direction: column;
+  }
+
+  .home__buttons .button,
+  .contact__buttons .button {
+    width: 100%;
+  }
+
+  .profile-card {
+    padding: 1.35rem;
+    border-radius: 1.4rem;
+  }
+
+  .profile-card__avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 1.5rem;
+  }
+
+  .skills__container,
+  .projects__container,
+  .research__cards {
+    gap: 1rem;
+    margin-top: 1.4rem;
+  }
+
+  .skill-card,
+  .project-card,
+  .research-card,
+  .about__content,
+  .contact__container {
+    padding: 1.15rem;
+    border-radius: 1.2rem;
+  }
+
+  .project-card__actions {
+    gap: .1rem .8rem;
+  }
+
+  .project-card__link {
+    margin-block: .65rem .75rem;
+  }
+
+  .project-card__actions .project-card__link {
+    margin-block: .55rem .25rem;
+  }
+
+  .project-card__tools,
+  .research-card__metrics {
+    gap: .4rem;
+  }
+
+  .project-card__tools span,
+  .research-card__metrics span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .research-card {
+    gap: .85rem;
+  }
+
+  .research-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .research-card__one-liner {
+    font-size: .86rem;
+  }
+
+  .footer__container {
+    gap: .8rem;
+    font-size: .78rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    margin-inline: .8rem;
+  }
+
+  .nav__logo {
+    font-size: 1.1rem;
+  }
+
+  .home__eyebrow {
+    font-size: .74rem;
+  }
+
+  .project-card__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 /* Medium Screens */
