@@ -449,6 +449,13 @@ button {
   line-height: 1.4;
 }
 
+.research-card__one-liner {
+  padding-left: .8rem;
+  border-left: 3px solid var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
 .research-card__meta,
 .research-card__metrics,
 .project-card__actions {
@@ -596,5 +603,9 @@ button {
 
   .section {
     padding-block: 6rem 2rem;
+  }
+
+  .research__cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
