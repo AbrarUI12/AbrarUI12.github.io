@@ -222,35 +222,51 @@
       <div class="container">
         <div class="section__data reveal center">
           <span class="section__subtitle">Research</span>
-          <h2 class="section__title">Ongoing LLM Evaluation Research</h2>
+          <h2 class="section__title">Ongoing LLM Research</h2>
         </div>
 
         <div class="research__cards grid">
           <article class="research-card reveal">
             <div class="research-card__meta">
               <span class="status-badge"><i class="ri-pulse-line"></i> Ongoing</span>
-              <span>Short paper</span>
+              <span>Research direction</span>
             </div>
-            <h3>RCA: A Recovery Coverage Audit for LLM Unlearning</h3>
+            <h3>LLM Quantization & Efficient Deployment</h3>
             <p>
-              Unlearning evaluations read a low recovery score as evidence that a model has forgotten. We show that the score depends on the recovery test itself: across a 200-entity synthetic world on Qwen2.5-1.5B and Llama-3.2-1B, broadening the retained-data stream from 512 to 7,680 examples at an identical update budget raises reference-adjusted recovery by 5.3 and 15.4 accuracy points. A released-checkpoint TOFU check does not reproduce the effect, bounding the claim. We report recovery as conditional on stream, budget, residual, and utility.
+              I am researching reduced-precision quantization, model compression, inference efficiency, and deployment trade-offs for large language models. The goal is to understand how LLMs can become more practical for memory-constrained and latency-sensitive environments while preserving useful model quality.
             </p>
             <div class="research-card__metrics" aria-label="Key research details">
-              <span>200 entities</span><span>2 model families</span><span>TOFU counterexample</span>
+              <span>Model compression</span><span>Memory-efficient inference</span><span>Deployment trade-offs</span>
             </div>
           </article>
 
           <article class="research-card reveal">
             <div class="research-card__meta">
               <span class="status-badge"><i class="ri-pulse-line"></i> Ongoing</span>
-              <span>Long paper</span>
+              <span>LLM unlearning</span>
             </div>
-            <h3>Where the Window Starts: An Unreported Choice Inflates Gemma’s Perplexity up to 30-Fold and Hides Compression Damage</h3>
+            <h3>Recovery Coverage Audit — LLM Unlearning</h3>
             <p>
-              Windowed perplexity depends on an unstated choice: whether each scored window begins with a BOS token. We quantify it with a two-pass anchor sensitivity index over 24 checkpoints. Models outside the Gemma lineage read 0.966–1.012; Gemma reads 1.13–29.77, so standard evaluation code used by GPTQ, SparseGPT, Wanda, and AWQ reports gemma-2-9b perplexity nearly 30× too high, while removing the anchor inside a benchmark harness costs gemma-2-2b 29.31 accuracy points. The error also runs the other way: a compressed checkpoint we build passes the harness while degrading 3.47× under sliding-window serving. None of 41 compression papers states its convention; we propose a reporting signature and two-pass check.
+              Studied whether “forgotten” information in large language models is really gone. Built a controlled synthetic knowledge world plus a public benchmark check, and showed that how much knowledge appears to return depends heavily on the recovery test—the later training data, update budget, and comparison baseline. The study argues that unlearning results should be reported as conditional on the recovery procedure, rather than treated as direct evidence of deletion.
             </p>
+            <p class="research-card__one-liner">Evaluation study on whether machine unlearning in LLMs removes knowledge or merely hides it.</p>
             <div class="research-card__metrics" aria-label="Key research details">
-              <span>24 checkpoints</span><span>Up to 30× inflation</span><span>41-paper audit</span>
+              <span>Unlearning & privacy</span><span>Adversarial recovery</span><span>Synthetic datasets</span>
+            </div>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-card__meta">
+              <span class="status-badge"><i class="ri-pulse-line"></i> Ongoing</span>
+              <span>Measurement validity</span>
+            </div>
+            <h3>Evaluation Conventions in Perplexity and Model Compression</h3>
+            <p>
+              Investigated a hidden implementation choice in language-model perplexity evaluation and showed that, for one model family, it changes reported values by more than an order of magnitude and can mask real degradation in compressed models. Audited widely used evaluation codebases and published compression research to show the choice is almost never reported, then proposed a reporting standard and an inexpensive two-pass check.
+            </p>
+            <p class="research-card__one-liner">Measurement-validity study showing that an unreported convention distorts language-model and compression results.</p>
+            <div class="research-card__metrics" aria-label="Key research details">
+              <span>Perplexity evaluation</span><span>GPTQ · SparseGPT · Wanda · AWQ</span><span>Literature audit</span>
             </div>
           </article>
         </div>
