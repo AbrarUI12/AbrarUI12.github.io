@@ -339,9 +339,8 @@ button {
   font-size: 1.25rem;
 }
 
-/* About / Research / Contact */
+/* About / Contact */
 .about__content,
-.research__content,
 .contact__container {
   background: var(--container-color);
   border: 1px solid var(--border-color);
@@ -429,10 +428,74 @@ button {
 }
 
 /* Research */
-.research__content ul {
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin-top: .8rem;
+.research__cards {
+  margin-top: 2rem;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 36px var(--shadow-color);
+}
+
+.research-card h3 {
+  color: var(--title-color);
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.research-card__meta,
+.research-card__metrics,
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+}
+
+.research-card__meta {
+  color: var(--text-color);
+  font-size: .76rem;
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  color: hsl(156, 66%, 34%);
+  background: hsla(156, 66%, 44%, .12);
+  border: 1px solid hsla(156, 66%, 44%, .28);
+  border-radius: 999px;
+  padding: .28rem .65rem;
+}
+
+.dark-theme .status-badge {
+  color: hsl(156, 68%, 66%);
+}
+
+.research-card__metrics {
+  margin-top: auto;
+}
+
+.research-card__metrics span {
+  color: var(--first-color);
+  background: hsla(214, 92%, 55%, .08);
+  border-radius: .65rem;
+  padding: .35rem .6rem;
+  font-size: .72rem;
+  font-weight: var(--font-semibold);
+}
+
+.project-card__actions .project-card__link {
+  margin-bottom: 0;
 }
 
 /* Contact */
@@ -507,8 +570,7 @@ button {
     grid-template-columns: 1.1fr .9fr;
   }
 
-  .about__container,
-  .research__container {
+  .about__container {
     grid-template-columns: .8fr 1.2fr;
     align-items: start;
   }
@@ -519,6 +581,10 @@ button {
 
   .projects__container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .research__cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
