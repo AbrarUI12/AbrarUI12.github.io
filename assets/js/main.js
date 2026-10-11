@@ -3,9 +3,32 @@ const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav__link');
 
-navToggle?.addEventListener('click', () => navMenu.classList.add('show-menu'));
-navClose?.addEventListener('click', () => navMenu.classList.remove('show-menu'));
-navLinks.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('show-menu')));
+const setMenuOpen = (open) => {
+  navMenu?.classList.toggle('show-menu', open);
+  navToggle?.setAttribute('aria-expanded', String(open));
+  navToggle?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+};
+
+navToggle?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  setMenuOpen(!navMenu?.classList.contains('show-menu'));
+});
+navClose?.addEventListener('click', () => setMenuOpen(false));
+navLinks.forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+
+document.addEventListener('click', (event) => {
+  if (navMenu?.classList.contains('show-menu') && !navMenu.contains(event.target)) {
+    setMenuOpen(false);
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenuOpen(false);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) setMenuOpen(false);
+});
 
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
