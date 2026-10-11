@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Mir Md Mohiuddin Abrar — Trainee Software Engineer candidate, CS student, Python/Web/AI-ML learner, and LLM quantization researcher." />
+  <meta name="description" content="Portfolio of Mir Md Mohiuddin Abrar — Python and full-stack software engineer building production web systems, offline-first platforms, RAG applications, and LLM evaluation research." />
   <title>Mir Md Mohiuddin Abrar | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,9 @@
         <div class="home__content reveal">
           <p class="home__eyebrow">Available from June 2026</p>
           <h1 class="home__title">Hi, I'm <span>Mir Md Mohiuddin Abrar</span></h1>
-          <h2 class="home__subtitle">Trainee Software Engineer Candidate</h2>
+          <h2 class="home__subtitle">Python & Full-Stack Software Engineer</h2>
           <p class="home__description">
-            Computer Science student at BRAC University focused on Python, full-stack development, databases, software engineering, AI/ML, and LLM quantization research.
+            Computer Science student at BRAC University building production-oriented web systems with Python, FastAPI, PostgreSQL, React, and TypeScript—alongside research on reliable LLM evaluation.
           </p>
 
           <div class="home__buttons">
@@ -88,7 +88,7 @@
             I am a Computer Science undergraduate at BRAC University with a current CGPA of 3.55. I enjoy building practical web applications, writing clean code, and learning how modern enterprise software is designed, tested, and maintained.
           </p>
           <p>
-            My current focus areas are Python, OOP, REST-style backend logic, relational databases, software documentation, machine learning, NLP, and efficient LLM deployment through quantization.
+            My current focus areas are Python backend engineering, REST APIs, relational databases, offline-first applications, retrieval-augmented generation, machine learning, NLP, and rigorous LLM evaluation.
           </p>
         </div>
       </div>
@@ -134,6 +134,48 @@
         </div>
 
         <div class="projects__container grid">
+          <article class="project-card reveal project-card--featured">
+            <div class="project-card__tag">Production Full Stack</div>
+            <h3>ClientFlow</h3>
+            <p>
+              A deployed CRM-lite platform that turns leads into exact quotations, scheduled follow-ups, and dashboard outcomes. Built with tenant-scoped authorization, decimal-safe pricing, legal quote transitions, PDF and CSV exports, PostgreSQL migrations, and end-to-end browser coverage.
+            </p>
+            <div class="project-card__actions">
+              <a href="https://clientflow-web-abrarui12-kocw.onrender.com" target="_blank" rel="noopener" class="project-card__link">Live Demo <i class="ri-external-link-line"></i></a>
+              <a href="https://clientflow-api-abrarui12-kocw.onrender.com/docs" target="_blank" rel="noopener" class="project-card__link">API Docs <i class="ri-code-box-line"></i></a>
+            </div>
+            <div class="project-card__tools">
+              <span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>Playwright</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal project-card--featured">
+            <div class="project-card__tag">Offline-First Platform</div>
+            <h3>RetailOps BD</h3>
+            <p>
+              A production-oriented POS and commerce operations platform for Bangladeshi SMEs. It supports offline sales through IndexedDB, exactly-once synchronization, inventory conflict reconciliation, auditable stock movements, Facebook and COD orders, courier workflows, returns, role-based access, and analytics.
+            </p>
+            <div class="project-card__actions">
+              <a href="https://retailops-bd.onrender.com" target="_blank" rel="noopener" class="project-card__link">Live Demo <i class="ri-external-link-line"></i></a>
+              <a href="https://github.com/AbrarUI12/RetailOps_BD" target="_blank" rel="noopener" class="project-card__link">GitHub <i class="ri-github-fill"></i></a>
+            </div>
+            <div class="project-card__tools">
+              <span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>React</span><span>PWA</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal project-card--featured">
+            <div class="project-card__tag">RAG · In Development</div>
+            <h3>KnowledgeOS</h3>
+            <p>
+              A multi-tenant, permission-aware RAG platform where organizations connect documents and receive answers grounded only in evidence each user is authorized to read, with verifiable citations. The architecture combines document ingestion, vector retrieval, asynchronous workers, shared contracts, evaluations, and production observability.
+            </p>
+            <a href="https://github.com/AbrarUI12/KnowledgeOS" target="_blank" rel="noopener" class="project-card__link">View GitHub <i class="ri-arrow-right-up-line"></i></a>
+            <div class="project-card__tools">
+              <span>FastAPI</span><span>pgvector</span><span>Celery</span><span>Next.js</span><span>RAG</span>
+            </div>
+          </article>
+
           <article class="project-card reveal">
             <div class="project-card__tag">Full Stack</div>
             <h3>E-Commerce Website</h3>
@@ -176,20 +218,40 @@
     </section>
 
     <section class="research section" id="research">
-      <div class="container grid research__container">
-        <div class="section__data reveal">
-          <span class="section__subtitle">Current Focus</span>
-          <h2 class="section__title">LLM Quantization Research</h2>
+      <div class="container">
+        <div class="section__data reveal center">
+          <span class="section__subtitle">Research</span>
+          <h2 class="section__title">Ongoing LLM Evaluation Research</h2>
         </div>
-        <div class="research__content reveal">
-          <p>
-            I am currently researching reduced-precision quantization, model compression, inference efficiency, and deployment trade-offs for large language models. My goal is to understand how LLMs can become more practical for memory-constrained and latency-sensitive environments.
-          </p>
-          <ul>
-            <li>Model size vs. accuracy trade-offs</li>
-            <li>Memory-efficient inference</li>
-            <li>Deployment-friendly AI systems</li>
-          </ul>
+
+        <div class="research__cards grid">
+          <article class="research-card reveal">
+            <div class="research-card__meta">
+              <span class="status-badge"><i class="ri-pulse-line"></i> Ongoing</span>
+              <span>Short paper</span>
+            </div>
+            <h3>RCA: A Recovery Coverage Audit for LLM Unlearning</h3>
+            <p>
+              Unlearning evaluations read a low recovery score as evidence that a model has forgotten. We show that the score depends on the recovery test itself: across a 200-entity synthetic world on Qwen2.5-1.5B and Llama-3.2-1B, broadening the retained-data stream from 512 to 7,680 examples at an identical update budget raises reference-adjusted recovery by 5.3 and 15.4 accuracy points. A released-checkpoint TOFU check does not reproduce the effect, bounding the claim. We report recovery as conditional on stream, budget, residual, and utility.
+            </p>
+            <div class="research-card__metrics" aria-label="Key research details">
+              <span>200 entities</span><span>2 model families</span><span>TOFU counterexample</span>
+            </div>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-card__meta">
+              <span class="status-badge"><i class="ri-pulse-line"></i> Ongoing</span>
+              <span>Long paper</span>
+            </div>
+            <h3>Where the Window Starts: An Unreported Choice Inflates Gemma’s Perplexity up to 30-Fold and Hides Compression Damage</h3>
+            <p>
+              Windowed perplexity depends on an unstated choice: whether each scored window begins with a BOS token. We quantify it with a two-pass anchor sensitivity index over 24 checkpoints. Models outside the Gemma lineage read 0.966–1.012; Gemma reads 1.13–29.77, so standard evaluation code used by GPTQ, SparseGPT, Wanda, and AWQ reports gemma-2-9b perplexity nearly 30× too high, while removing the anchor inside a benchmark harness costs gemma-2-2b 29.31 accuracy points. The error also runs the other way: a compressed checkpoint we build passes the harness while degrading 3.47× under sliding-window serving. None of 41 compression papers states its convention; we propose a reporting signature and two-pass check.
+            </p>
+            <div class="research-card__metrics" aria-label="Key research details">
+              <span>24 checkpoints</span><span>Up to 30× inflation</span><span>41-paper audit</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
