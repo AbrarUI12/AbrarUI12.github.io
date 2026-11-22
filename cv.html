@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/styles.css?v=20261123-update" />
 <style>
 .cv-page { max-width: 900px; margin: 5.5rem auto 3rem; padding: 1.5rem; background: var(--container-color); border: 1px solid var(--border-color); border-radius: 1rem; }
@@ -26,7 +27,7 @@
   @page { size: A4; margin: 12mm; }
   body { background: white !important; color: black !important; font-family: Arial,sans-serif; font-size: 9pt; }
   .header, .cv-actions, .skip-link { display: none !important; }
-  .cv-page { max-width: unset; margin: 0; padding: 0; border: none; border-radius: 0; box-shadow: none; }
+  .cv-page { max-width: unset; margin: 0; padding: 0; border: none; border-radius: 0; box-shadow: none; background: #fff !important; color: #000 !important; }
   .cv-page h1, .cv-page h2, .cv-page h3 { color: black !important; }
   .cv-page h2 { break-after: avoid; margin: .6rem 0 .3rem; }
   .cv-page h3 { break-after: avoid; margin: .45rem 0 .2rem; }
@@ -36,7 +37,25 @@
 </style>
 </head>
 <body>
-<header class="header"><nav class="nav container"><a class="nav__logo" href="./index.html">Abrar<span>.</span></a><a class="nav__link" href="./index.html">Back to portfolio</a></nav></header>
+<script>
+  // Apply the homepage's saved theme before the CV is painted.
+  try {
+    if (localStorage.getItem('selected-theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+    }
+  } catch (_) { /* Theme preference unavailable; use light mode. */ }
+</script>
+<header class="header">
+  <nav class="nav container">
+    <a class="nav__logo" href="./index.html">Abrar<span>.</span></a>
+    <div class="nav__actions">
+      <a class="nav__link" href="./index.html">Back to portfolio</a>
+      <button class="theme-toggle" id="theme-button" type="button" aria-label="Toggle dark and light theme" title="Toggle dark and light theme">
+        <i class="ri-moon-line" aria-hidden="true"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <main class="cv-page">
 <div class="cv-actions"><button class="button" type="button" onclick="window.print()">Print / Save as PDF</button><a class="button button--ghost" href="./index.html">Portfolio</a></div>
 <h1>MIR MD MOHIUDDIN ABRAR</h1>
@@ -72,5 +91,6 @@
 <p>Dhaka City College | Higher Secondary Certificate (HSC) | 2021</p>
 <p>South Point School &amp; College | Secondary School Certificate (SSC) | 2019</p>
 </main>
+<script src="assets/js/main.js?v=20261123-update"></script>
 </body>
 </html>
