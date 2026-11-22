@@ -790,7 +790,7 @@ button {
 .experience__details li { padding-left: .15rem; margin-bottom: .8rem; line-height: 1.7; }
 .experience__details strong { color: var(--title-color); }
 .experience__note { font-size: var(--small-font-size); }
-.status-badge--review { background: hsla(214, 75%, 50%, .1); color: var(--first-color); border-color: hsla(214, 75%, 50%, .25); }
+.status-badge--ongoing { background: hsla(214, 75%, 50%, .1); color: var(--first-color); border-color: hsla(214, 75%, 50%, .25); }
 .skip-link { position: fixed; top: -100px; left: 1rem; z-index: 1000; padding: .65rem 1rem; color: #fff; background: #18386c; border-radius: .5rem; }
 .skip-link:focus { top: .5rem; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--first-color); outline-offset: 4px; }
