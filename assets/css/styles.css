@@ -781,3 +781,39 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+/* Content additions — use the original site's design system. */
+.about__education { font-size: var(--small-font-size); }
+.experience__container { max-width: 940px; margin: 2rem auto 0; }
+.experience__details { margin: 0; padding-left: 1.15rem; list-style: disc; }
+.experience__details li { padding-left: .15rem; margin-bottom: .8rem; line-height: 1.7; }
+.experience__details strong { color: var(--title-color); }
+.experience__note { font-size: var(--small-font-size); }
+.status-badge--review { background: hsla(214, 75%, 50%, .1); color: var(--first-color); border-color: hsla(214, 75%, 50%, .25); }
+.skip-link { position: fixed; top: -100px; left: 1rem; z-index: 1000; padding: .65rem 1rem; color: #fff; background: #18386c; border-radius: .5rem; }
+.skip-link:focus { top: .5rem; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--first-color); outline-offset: 4px; }
+@media screen and (max-width: 767px) {
+  .home__container, .about__container { grid-template-columns: minmax(0, 1fr); }
+  .home__title { font-size: clamp(1.8rem, 8vw, 2.9rem); overflow-wrap: break-word; }
+  .home__subtitle { overflow-wrap: break-word; }
+  .nav__menu { z-index: 110; }
+  .nav__link { min-height: 44px; display: flex; align-items: center; }
+  .nav__toggle, .nav__close, .theme-toggle { min-width: 44px; min-height: 44px; display: inline-grid; place-items: center; }
+  .nav__list { padding-right: 0; }
+  .experience__container { margin-top: 1.5rem; }
+  .research__cards, .projects__container, .skills__container { grid-template-columns: minmax(0, 1fr); }
+  .project-card__actions { gap: .5rem 1rem; }
+  .project-card__link { overflow-wrap: anywhere; }
+}
+@media screen and (max-width: 380px) {
+  .home__title { font-size: clamp(1.65rem, 8vw, 2rem); }
+  .home__eyebrow { white-space: normal; }
+  .research-card__meta { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
