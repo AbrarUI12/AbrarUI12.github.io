@@ -4,7 +4,7 @@ Responsive GitHub Pages portfolio of Mir Md Mohiuddin Abrar, highlighting applie
 
 ## Site
 - `index.html` — home, about and education, current professional experience, technical skills, projects, research, contact
-- `cv.html` — current browser-readable and print-to-PDF CV (matches the supplied November 2026 CV)
+- `cv.html` — theme-synced embedded preview of the exact original CV PDF, with direct PDF download and view buttons
 - `assets/css/styles.css` — original visual design with mobile, accessibility and print support
 - `assets/js/main.js` — mobile menu, theme toggle, active section navigation, reveal animations
 - `assets/img/profile.jpg` — profile photo
@@ -13,7 +13,7 @@ Responsive GitHub Pages portfolio of Mir Md Mohiuddin Abrar, highlighting applie
 - The portfolio intentionally does **not** link to client-owned iris-analysis source code.
 - The published BlackboxNLP work and first-author EAACL workshop submissions are distinctly labeled.
 - KnowledgeOS is listed as completed at the owner's direction; repository documentation may not yet reflect this status.
-- The original binary `assets/docs/cv.pdf` is **not linked** because it is older than the current CV. The supported CV link opens `cv.html`, where users can print/save it as PDF. To offer an updated one-click PDF, replace the binary with the latest PDF and change the homepage link accordingly.
+- `assets/docs/cv.pdf` — exact original CV PDF provided by the site owner (not recreated from HTML); both the homepage and CV viewer link to this file.
 - The portfolio's GitHub Pages URL is `https://abrarui12.github.io/`.
 
 ## Local testing

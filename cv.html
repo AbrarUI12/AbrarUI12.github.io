@@ -22,11 +22,14 @@
 .cv-meta, .cv-links { margin: .4rem 0; }
 .cv-links a { color: var(--first-color); text-decoration: underline; margin-right: .8rem; }
 .cv-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.cv-pdf-preview { display: block; width: 100%; height: min(80vh, 980px); min-height: 480px; margin-top: 1rem; border: 1px solid var(--border-color); border-radius: .5rem; background: #fff; }
+@media (max-width: 540px) { .cv-pdf-preview { min-height: 440px; height: 70vh; } }
 @media (max-width: 540px) { .cv-page { margin: 5rem .75rem 2rem; padding: 1.05rem; } .cv-page h1 { font-size: 1.4rem; } .cv-actions .button { flex: 1 1 auto; } }
 @media print {
   @page { size: A4; margin: 12mm; }
   body { background: white !important; color: black !important; font-family: Arial,sans-serif; font-size: 9pt; }
   .header, .cv-actions, .skip-link { display: none !important; }
+  .cv-pdf-preview { height: 90vh; border: none; }
   .cv-page { max-width: unset; margin: 0; padding: 0; border: none; border-radius: 0; box-shadow: none; background: #fff !important; color: #000 !important; }
   .cv-page h1, .cv-page h2, .cv-page h3 { color: black !important; }
   .cv-page h2 { break-after: avoid; margin: .6rem 0 .3rem; }
@@ -57,39 +60,12 @@
   </nav>
 </header>
 <main class="cv-page">
-<div class="cv-actions"><button class="button" type="button" onclick="window.print()">Print / Save as PDF</button><a class="button button--ghost" href="./index.html">Portfolio</a></div>
-<h1>MIR MD MOHIUDDIN ABRAR</h1>
-<p><strong>SOFTWARE DEVELOPMENT | PYTHON / BACKEND | FULL-STACK | AI/ML</strong></p>
-<p class="cv-meta">Dhaka, Bangladesh | <a href="mailto:mir0abrar@gmail.com">mir0abrar@gmail.com</a> | +880 1875 315276</p>
-<p class="cv-links"><a href="https://github.com/AbrarUI12">GitHub</a><a href="https://www.linkedin.com/in/mir-abrar-5090192b6/">LinkedIn</a><a href="https://abrarui12.github.io/">Portfolio</a></p>
-<h2>PROFESSIONAL SUMMARY</h2>
-<p>Computer Science graduate and Software Development Intern with hands-on experience in AI/ML, computer vision, and full-stack development. Experienced in training and evaluating deep learning models using Python and PyTorch, developing computer-vision pipelines, and conducting LLM research. Skilled in FastAPI, REST APIs, relational databases, and RAG system development, combining machine learning expertise with practical software engineering.</p>
-<h2>TECHNICAL SKILLS</h2>
-<p><strong>Languages:</strong> Python, TypeScript, JavaScript, SQL, C</p>
-<p><strong>AI / ML:</strong> PyTorch, scikit-learn, Hugging Face Transformers, OpenCV, ONNX Runtime, NumPy, NLP, LLMs, RAG, LLM API Integration, Tool Calling, Model Evaluation, Model Deployment, Inference Optimization</p>
-<p><strong>Backend:</strong> FastAPI, Django, Flask, Node.js, Express.js, REST APIs, SQLAlchemy, Pydantic, Alembic</p>
-<p><strong>Databases:</strong> PostgreSQL, MySQL, Redis, FAISS, Chroma, pgvector, IndexedDB, Celery</p>
-<p><strong>Frontend:</strong> React, HTML/CSS, Tailwind CSS, PWA</p>
-<p><strong>DevOps &amp; Cloud:</strong> Docker, Linux, AWS, GCP, Azure, GitHub Actions, Git, Pytest, CI/CD, MLflow, Experiment Tracking</p>
-<p><strong>Data Science:</strong> Pandas, Data Preprocessing, EDA, Data Visualization, Statistical Analysis</p>
-<h2>PROFESSIONAL EXPERIENCE</h2>
-<h3>Software Development Intern | Workspace InfoTech | Current</h3>
-<ul><li>Co-developed the iHer Shop e-commerce module within ALIV, contributing product management, inventory and stock-reservation workflows, order processing, PowerTranz payments, and invoice notifications.</li>
-<li>Developed and evaluated the ML/computer-vision component for a client iris-analysis project using Python, PyTorch, and OpenCV; trained MobileNetV3-based segmentation models and benchmarked classical and learned methods (0.913 mean iris Dice on held-out NIR images).</li>
-<li>Developed and enhanced REST APIs, built responsive admin dashboard interfaces for product and order management, and resolved frontend and backend issues to improve application functionality and reliability.</li></ul>
-<h2>SELECTED PROJECTS</h2>
-<h3>RetailOps BD — Offline-First POS &amp; Commerce Platform</h3>
-<p>Built a FastAPI/PostgreSQL + React/TypeScript retail platform with offline-first sales, idempotent sync, inventory reconciliation, RBAC, Redis/Celery, Docker, and automated testing. <a href="https://github.com/AbrarUI12/RetailOps_BD">GitHub</a> | <a href="https://retailops-bd.onrender.com/">Demo</a></p>
-<h3>ClientFlow — Full-Stack CRM &amp; Sales Workflow</h3>
-<p>Developed a FastAPI/PostgreSQL + React CRM featuring JWT authentication, scoped authorization, leads/quotes, precise Decimal calculations, workflow validation, PDF/CSV exports, and Pytest. <a href="https://github.com/AbrarUI12/Client_Flow">GitHub</a> | <a href="https://clientflow-web-abrarui12-kocw.onrender.com/">Demo</a></p>
-<h3>KnowledgeOS — Enterprise RAG Platform</h3>
-<p>Developed a multi-tenant, permission-aware RAG platform with grounded citations, hybrid retrieval, FastAPI, pgvector, Redis/Celery, and Next.js/TypeScript. <a href="https://github.com/AbrarUI12/KnowledgeOS">GitHub</a> | <a href="https://abrarui12.github.io/KnowledgeOS/">Demo</a></p>
-<h2>SELECTED PUBLICATION</h2>
-<p>Published BlackboxNLP workshop paper: KD Sink interpretability.</p>
-<h2>EDUCATION</h2>
-<p>BRAC University | B.Sc. in Computer Science | 2026 | CGPA: 3.57/4.00</p>
-<p>Dhaka City College | Higher Secondary Certificate (HSC) | 2021</p>
-<p>South Point School &amp; College | Secondary School Certificate (SSC) | 2019</p>
+<div class="cv-actions"><a class="button" href="./assets/docs/cv.pdf" download="Mir_Abrar_CV.pdf" type="application/pdf">Download Original CV (PDF)</a><a class="button button--ghost" href="./assets/docs/cv.pdf" target="_blank" rel="noopener" type="application/pdf">View Original PDF</a><a class="button button--ghost" href="./index.html">Portfolio</a></div>
+<h1>Curriculum Vitae</h1>
+<p>Preview of the original CV uploaded by Abrar. Use <strong>Download Original CV (PDF)</strong> to get the same document without formatting changes.</p>
+<object class="cv-pdf-preview" data="./assets/docs/cv.pdf#toolbar=1" type="application/pdf" aria-label="Original curriculum vitae PDF">
+  <p>The embedded PDF preview is not available in this browser. <a href="./assets/docs/cv.pdf">View the original PDF</a> or use the download button above.</p>
+</object>
 </main>
 <script src="assets/js/main.js?v=20261123-update"></script>
 </body>
